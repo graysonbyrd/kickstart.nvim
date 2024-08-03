@@ -235,6 +235,13 @@ require('lazy').setup({
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
   -- plugin for copying filepaths from telescope
   'kiyoon/telescope-insert-path.nvim',
+  -- plugin to allow for renaming current file with :rename filename.extension
+  {
+    'tpope/vim-eunuch',
+    config = function()
+      vim.cmd 'cnoreabbrev rename Rename'
+    end,
+  },
   -- plugin for easy toggling of comments
   {
     'numToStr/Comment.nvim',
