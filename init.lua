@@ -84,6 +84,13 @@ I hope you enjoy your Neovim journey,
 P.S. You can delete this when you're done too. It's your config now! :)
 --]]
 
+-- for autoformatting python with Black
+vim.g.python3_host_prog = '~/.local/venv/nvim/bin/python'
+-- Map <c-q> in normal mode to call Black() function
+vim.api.nvim_buf_set_keymap(0, 'n', '<c-q>', '<cmd>lua Black()<CR>', { noremap = true, silent = true })
+-- Map <c-q> in insert mode to call Black() function
+vim.api.nvim_buf_set_keymap(0, 'i', '<c-q>', '<cmd>lua Black()<CR>', { noremap = true, silent = true })
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -254,7 +261,7 @@ require('lazy').setup({
     end,
   },
   -- NOTE: Plugins can also be added by using a table,
-  -- with the first argument being the link and the following
+  -- with the first argumentbeing the link and the following
   -- keys can be used to configure plugin behavior/loading/etc.
   --
   -- Use `opts = {}` to force a plugin to be loaded.
