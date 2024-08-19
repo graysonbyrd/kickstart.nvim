@@ -102,6 +102,9 @@ return {
         -- "mypy", -- python static linting/formatting
         -- "ruff", -- python static linting/formatting
         pyright = {},
+        ruff = {},
+        mypy = {},
+        black = {},
         lua_ls = {
           settings = {
             Lua = {
@@ -139,3 +142,4 @@ return {
     end
   },
 }
+
