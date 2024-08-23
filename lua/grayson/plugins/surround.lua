@@ -1,3 +1,4 @@
+-- Usage: ys{motion}{char}
 return {
   "kylechui/nvim-surround",
   event = { "BufReadPre", "BufNewFile" },
